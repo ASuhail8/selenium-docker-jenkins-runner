@@ -27,4 +27,4 @@ services:
       - HUB_HOST=hub  
       - MODULE=search-module.xml
     volumes :
-    - C:\Users\abdul\eclipse-workspace\selenium-doc\output\search-module:/usr/share/udemy/test-output
+    - ./output/search-module:/usr/share/udemy/test-output
