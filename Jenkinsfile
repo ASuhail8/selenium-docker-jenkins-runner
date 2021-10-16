@@ -20,7 +20,7 @@ pipeline{
 
 	post{
 		always{
-			archiveArtifacts artifacts: 'C:/Users/abdul/eclipse-workspace/selenium-doc/output/**'
+			archiveArtifacts artifacts: 'output/**'
 			bat "docker-compose down"
 		}
 	}
