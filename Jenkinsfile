@@ -3,17 +3,17 @@ pipeline{
 	stages{
 		stage("Pull latest image"){
 			steps{
-				bat "docker pull asuhail8/selenium-docker"
+				sh "docker pull asuhail8/selenium-docker"
 			}
 		}
 		stage("Start Grid"){
 			steps{
-				bat "docker-compose up -d hub chrome firefox"
+				sh "docker-compose up -d hub chrome firefox"
 			}
 		}
 		stage("Run Test"){
 			steps{
-				bat "docker-compose up search-module"
+				sh "docker-compose up search-module"
 			}
 		}
 			}
@@ -21,7 +21,7 @@ pipeline{
 	post{
 		always{
 			archiveArtifacts artifacts: 'output/**'
-			bat "docker-compose down"
+			sh "docker-compose down"
 		}
 	}
 }
