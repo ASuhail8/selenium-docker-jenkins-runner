@@ -46,6 +46,7 @@ services:
     depends_on :
       - chrome
       - firefox
+      - edge
     environment :
       - BROWSER=firefox  
       - HUB_HOST=selenium-hub  
