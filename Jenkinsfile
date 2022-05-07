@@ -21,6 +21,8 @@ pipeline{
 	post{
 		always{
 			archiveArtifacts artifacts: 'output/**'
+			junit 'output/search-module/emailable-report.html'
+			emailext attachLog: true, attachmentsPattern: 'output/search-module/emailable-report.html', body: '', subject: '', to: 'Abdulla.suhail8@gmail.com'
 			sh "docker-compose down"
 		}
 	}
